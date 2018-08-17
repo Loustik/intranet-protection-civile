@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+# intranet-protection-civile
+Intranet officiel de la Protection Civile des Hauts-de-Seine
 
-You can use the [editor on GitHub](https://github.com/Loustik/intranet-protection-civile/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Cet intranet est à destination et usage des associations départementales de Protection Civile, ainsi qu'aux groupements d'associations de Protection Civile.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Cet intranet permet :
+- Gérer une liste d'utilisateurs avec les droits d'accès
+- Générer des signatures mail avec la charte graphique officielle
+- Estampiller des photos à l'effigie de la Protection Civile (cartouche)
+- Mettre à jour les antennes (préalablement définie en base de données)
+- Créer des Dispositif Prévisionnel de secours
+- Workflow de validation d'un DPS avec envoi de mails (autres ADPC / Préfecture)
+- Voir toutes les demandes de Dispositif Prévisionnel de secours
+- Effectuer une recherche de bénévoles secouristes
+- Accéder aux recettes des DPS
+- Mettre à jour des listes de diffusion mail
+- Gérer une base contacts de clients favoris pour créer des DPS plus rapidement
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### Prérequis
 
-```markdown
-Syntax highlighted code block
+Runtime applicatif : PHP 5.3 ou ultérieur
+Serveur web : Apache 2.2 / 2.4
+Base de données : Mysql 5.x ou mariadb
+Modules apache :
+- mod_rewrite
 
-# Header 1
-## Header 2
-### Header 3
+#### Installation
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Loustik/intranet-protection-civile/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+1. git clone https://github.com/ProtectionCivile/intranet-protection-civile.git
+3. Récupérer la BDD
+4. Installer PHPRbac (si ce n'est pas fait) en exécutant le script PhpRbac/database/MySql.sql dans PhpMyAdmin
+5. Installer les permissions et roles par défaut en :
+5a. se connectant à l'appli avec un compte d'admin
+5b. exécutant le script installation/install_rbac.php?confirm
+6. Installer les tables SQL supplémentaires avec le script 'installation/update_sql_fields.sql'
+2. Aller sur http://localhost/index.php
